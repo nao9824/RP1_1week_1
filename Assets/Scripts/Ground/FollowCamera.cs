@@ -8,6 +8,8 @@ public class FollowCamera : MonoBehaviour
     GameObject playerObj;
     PlayerController player;
     Transform playerTransform;
+    //カメラZ軸　playerからマイナス分
+    private float cameraZPlus;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,7 @@ public class FollowCamera : MonoBehaviour
         playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.GetComponent<PlayerController>();
         playerTransform = playerObj.transform;
+        cameraZPlus = -30;
     }
 
     // Update is called once per frame
@@ -26,6 +29,6 @@ public class FollowCamera : MonoBehaviour
     void MoveCamera()
     {
         //横だけ追従
-        transform.position = new Vector3(playerTransform.position.x,transform.position.y,playerTransform.position.z-30);
+        transform.position = new Vector3(playerTransform.position.x,transform.position.y,playerTransform.position.z + cameraZPlus);
     }
 }
