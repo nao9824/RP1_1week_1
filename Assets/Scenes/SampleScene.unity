@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   rightFacing: 0
-  BulletObj: {fileID: 534167653}
+  BulletObj: {fileID: 8479823788307816568, guid: 4aa5dbc12caa9734e8dffaccf0eaa1b0, type: 3}
   fMoveSpeed: 7
 --- !u!212 &1340786942
 SpriteRenderer:

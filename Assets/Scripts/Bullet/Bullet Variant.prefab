@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1600278224300898239, guid: c1ebe590d81b1cd4bbf491e0f07b03f1, type: 3}
       propertyPath: BulletObj
       value: 
-      objectReference: {fileID: 3733505885666842485}
+      objectReference: {fileID: 8479823788307816568, guid: 4aa5dbc12caa9734e8dffaccf0eaa1b0, type: 3}
     - target: {fileID: 1600278224300898239, guid: c1ebe590d81b1cd4bbf491e0f07b03f1, type: 3}
       propertyPath: bulletObj
       value: 
@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8468328969701787371, guid: c1ebe590d81b1cd4bbf491e0f07b03f1, type: 3}
+      propertyPath: BulletObj
+      value: 
+      objectReference: {fileID: 8479823788307816568, guid: 4aa5dbc12caa9734e8dffaccf0eaa1b0, type: 3}
     - target: {fileID: 8468328969701787371, guid: c1ebe590d81b1cd4bbf491e0f07b03f1, type: 3}
       propertyPath: m_Enabled
       value: 0
