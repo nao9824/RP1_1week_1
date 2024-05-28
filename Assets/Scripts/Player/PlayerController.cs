@@ -15,7 +15,16 @@ public class PlayerController : MonoBehaviour
 
     //’e
     public GameObject BulletObj;
-   // Vector3 bulletPoint;//’e‚ÌˆÊ’u
+    // Vector3 bulletPoint;//’e‚ÌˆÊ’u
+
+    public float fMoveSpeed = 7.0f;
+
+    //public GameObject bulletPointObj;
+
+    bool shot = false;
+    Vector3 bulletpoint;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +37,7 @@ public class PlayerController : MonoBehaviour
         rightFacing = true;
         isJump = false;
 
+        bulletpoint = transform.position;
         //’e‚Ì”­ŽËˆÊ’u
         //bulletPoint = transform.Find("BulletPoint").localPosition;
     }
@@ -48,6 +58,13 @@ public class PlayerController : MonoBehaviour
                 Quaternion.identity
                 );
         }*/
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(BulletObj, transform.position, Quaternion.identity);
+        }
+
+
+        
     }
 
     private void MoveUpdate()
