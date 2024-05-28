@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     //移動関連変数
     [HideInInspector]public float xSpeed;
-    [HideInInspector] public bool rightFacing;//右を向いているか　向いていたらtrue
+    [HideInInspector] public static bool rightFacing;//右を向いているか　向いていたらtrue
     [HideInInspector] private bool isJump;
 
     //弾
@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     bool shot = false;
     Vector3 bulletpoint;
     int bulletcount = 5;
+
+    public static Vector2 velocity;
 
 
     public GameObject EnemyObj;
@@ -128,7 +130,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //移動速度ベクトルを現在地から取得
-        Vector2 velocity = rigidbody2D.velocity;
+        velocity = rigidbody2D.velocity;
         velocity.x = xSpeed;
 
         rigidbody2D.velocity = velocity;
