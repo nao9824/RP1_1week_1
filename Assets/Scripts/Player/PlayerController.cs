@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         if(isJump == false && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))){
             isJump = true;
-            float jumpPower = 5.0f;
+            float jumpPower = 10.0f;
             rigidbody2D.velocity=new Vector2(rigidbody2D.velocity.x,jumpPower);
         }
     }
