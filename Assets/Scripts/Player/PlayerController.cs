@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
     //オブジェクト・コンポーネント参照
     private Rigidbody2D rigidbody2D;//Rigidbody2Dコンポーネント参照
     private SpriteRenderer spriteRenderer;
-
     //移動関連変数
-    [HideInInspector]public float xSpeed;
+    [HideInInspector] public float xSpeed;
     [HideInInspector] public bool rightFacing;//右を向いているか　向いていたらtrue
     [HideInInspector] private bool isJump;
 
     //弾
     public GameObject BulletObj;
+    // Vector3 bulletPoint;//弾の位置
     // Vector3 bulletPoint;//弾の位置
 
     public float fMoveSpeed = 7.0f;
@@ -24,7 +23,7 @@ public class PlayerController : MonoBehaviour
     bool shot = false;
     Vector3 bulletpoint;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +31,6 @@ public class PlayerController : MonoBehaviour
         //コンポーネント参照取得
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
         //初期化変数
         rightFacing = true;
         isJump = false;
@@ -41,7 +39,6 @@ public class PlayerController : MonoBehaviour
         //弾の発射位置
         //bulletPoint = transform.Find("BulletPoint").localPosition;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +61,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        
+
     }
 
     private void MoveUpdate()
@@ -72,7 +69,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             xSpeed = 6.0f;
-
             rightFacing = true;
             //spriteを通常の向きで表示
             spriteRenderer.flipX = false;
@@ -80,7 +76,6 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             xSpeed = -6.0f;
-
             rightFacing = false;
             //spriteを左右反転の向きで表示
             spriteRenderer.flipX = true;
@@ -89,15 +84,14 @@ public class PlayerController : MonoBehaviour
         {
             xSpeed = 0.0f;
         }
-
     }
-
     private void JumpUpdate()
     {
-        if(isJump == false && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))){
+        if (isJump == false && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)))
+        {
             isJump = true;
             float jumpPower = 10.0f;
-            rigidbody2D.velocity=new Vector2(rigidbody2D.velocity.x,jumpPower);
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpPower);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -107,7 +101,6 @@ public class PlayerController : MonoBehaviour
             isJump = false;
         }
     }
-
     /// <summary>
     /// FixedUpdateはUnityの標準機能で何度も自動で呼び出されるメソッド 
     /// </summary>
@@ -116,7 +109,6 @@ public class PlayerController : MonoBehaviour
         //移動速度ベクトルを現在地から取得
         Vector2 velocity = rigidbody2D.velocity;
         velocity.x = xSpeed;
-
         rigidbody2D.velocity = velocity;
     }
 }
