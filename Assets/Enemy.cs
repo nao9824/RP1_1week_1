@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static bool union = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +21,19 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("playerBullet"))
         {
-            Destroy(gameObject);
-
+            gameObject.GetComponent<Renderer>().material.color = Color.black;
+            union = true;
             Destroy(other.gameObject);
         }
+
+        if (union)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
+        }
     }
+
+    
 }

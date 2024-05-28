@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 394791533}
   m_Layer: 0
   m_Name: Hexagon Flat-Top
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,6 +557,7 @@ MonoBehaviour:
   rightFacing: 0
   BulletObj: {fileID: 8479823788307816568, guid: 4aa5dbc12caa9734e8dffaccf0eaa1b0, type: 3}
   fMoveSpeed: 7
+  EnemyObj: {fileID: 394791529}
 --- !u!212 &1340786942
 SpriteRenderer:
   m_ObjectHideFlags: 0
