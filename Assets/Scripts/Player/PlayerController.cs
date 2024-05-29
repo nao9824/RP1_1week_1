@@ -87,7 +87,10 @@ public class PlayerController : MonoBehaviour
             tentative = transform.position;
 
             transform.position = EnemyObj.transform.position;
-            
+
+
+            transform.localScale = new Vector3(transform.localScale.x , transform.localScale.y, transform.localScale.z);
+
             changchar = true;
 
             Destroy(EnemyObj.gameObject);

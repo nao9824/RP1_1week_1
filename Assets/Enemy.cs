@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.localScale = new Vector3(transform.localScale.x*0.4f, transform.localScale.y*0.4f, transform.localScale.z);
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (PlayerController.changchar)
         {
