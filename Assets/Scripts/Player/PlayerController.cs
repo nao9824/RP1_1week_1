@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     public Sprite newSprite;
 
+    public Sprite mainSprite;
+
     public GameObject EnemyObj;
 
     // Start is called before the first frame update
@@ -105,11 +107,23 @@ public class PlayerController : MonoBehaviour
 
 
         }
+        if (Input.GetKeyDown(KeyCode.E) && changchar)
+        {
+            spriteRenderer.sprite = mainSprite;
+            changchar = false;
+        }
       
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Toge") && !changchar)
+        {
+            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        }
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

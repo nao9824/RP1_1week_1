@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float fMoveSpeed = 7.0f;
     public GameObject BulletObj;
     bool rightFacing = PlayerController.rightFacing;
-    
+    public GameObject PlayerObj;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         {
 
             BulletObj.transform.Translate(fMoveSpeed * Time.deltaTime, 0, 0);
-            if (PlayerController.velocity.x + 30.0f < BulletObj.transform.position.x)
+            if (PlayerObj.transform.position.x + 30.0f < BulletObj.transform.position.x)
             {
                 Destroy(gameObject);
             }
