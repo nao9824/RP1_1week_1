@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Toge")&&!changchar)
         {
-            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
         }
         else { isJump = false; }
         if (collision.gameObject.CompareTag("Clear"))

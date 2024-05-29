@@ -41,9 +41,25 @@ public class Select : MonoBehaviour
             Debug.Log(stageNum);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && stageNum==1)
         {
-            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && stageNum == 2)
+        {
+            SceneManager.LoadScene("Stage2", LoadSceneMode.Single);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && stageNum == 3)
+        {
+            SceneManager.LoadScene("Stage3", LoadSceneMode.Single);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && stageNum == 4)
+        {
+            SceneManager.LoadScene("Stage4", LoadSceneMode.Single);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && stageNum == 5)
+        {
+            SceneManager.LoadScene("Stage5", LoadSceneMode.Single);
         }
     }
 
