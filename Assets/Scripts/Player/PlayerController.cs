@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
         }
        if (Enemy.union)
        {
-           Destroy(EnemyObj.gameObject);
+            Destroy(EnemyObj.gameObject);
             
             tentative = transform.position;
 
@@ -115,6 +116,18 @@ public class PlayerController : MonoBehaviour
         {
             isJump = false;
         }
+        if (collision.gameObject.CompareTag("Toge"))
+        {
+            Debug.Log("Ž€‚ñ‚¾");
+        }
+        //if (Enemy.union)
+        //{
+        //    tentative = transform.position;
+        //    Destroy(EnemyObj);
+        //    transform.position = EnemyObj.transform.position;
+        //    changchar = true;
+
+        //}
     }
 
 

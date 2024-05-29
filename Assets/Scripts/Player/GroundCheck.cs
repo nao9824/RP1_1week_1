@@ -13,7 +13,7 @@ public class GroundCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //transform.position = new Vector3(PlayerController.velocity.x, PlayerController.velocity.y-0.4f, 0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
