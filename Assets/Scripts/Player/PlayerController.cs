@@ -118,7 +118,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Toge") && !changchar)
         {
-            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            string name = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(name, LoadSceneMode.Single);
         }
     }
 
