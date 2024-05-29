@@ -303,7 +303,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e687cef565132ba4091b7225efe9a970, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb0434313b23507488932b1e564374f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -571,7 +571,7 @@ MonoBehaviour:
   xSpeed: 0
   BulletObj: {fileID: 8479823788307816568, guid: 4aa5dbc12caa9734e8dffaccf0eaa1b0, type: 3}
   fMoveSpeed: 7
-  newSprite: {fileID: 21300000, guid: e687cef565132ba4091b7225efe9a970, type: 3}
+  newSprite: {fileID: 21300000, guid: bb0434313b23507488932b1e564374f4, type: 3}
   EnemyObj: {fileID: 362039373}
 --- !u!212 &1340786942
 SpriteRenderer:
