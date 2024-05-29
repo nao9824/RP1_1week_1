@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         {
             isJump = false;
         }
-        if (collision.gameObject.CompareTag("Toge"))
+        if (collision.gameObject.CompareTag("Toge")&&!changchar)
         {
             Debug.Log("Ž€‚ñ‚¾");
         }
