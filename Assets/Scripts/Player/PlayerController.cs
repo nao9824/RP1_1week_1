@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     bool shot = false;
     Vector3 bulletpoint;
-    int bulletcount = 5;
+    public static int bulletcount = 5;
 
     public static bool changchar = false;
 
@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
         {
             string name = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(name, LoadSceneMode.Single);
+            bulletcount = 5;
         }
     }
 
@@ -143,6 +144,7 @@ public class PlayerController : MonoBehaviour
         {
             string name = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(name, LoadSceneMode.Single);
+            bulletcount = 5;
         }
         else { isJump = false; }
         if (collision.gameObject.CompareTag("Clear"))
