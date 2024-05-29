@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,31 +9,36 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite newSprite;
 
+    private BoxCollider2D boxCol;
+
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (PlayerController.changchar)
+        {
+            spriteRenderer.sprite = newSprite;
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.changchar)
-        {
-            spriteRenderer.sprite = newSprite;
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("playerBullet"))
         {
-            gameObject.GetComponent<Renderer>().material.color = Color.black;
+           // gameObject.GetComponent<Renderer>().material.color = Color.black;
             union = true;
             Destroy(other.gameObject);
-            
 
+            boxCol = other.GetComponent<BoxCollider2D>();
+
+            boxCol.enabled = false;
         }
 
         if (union)

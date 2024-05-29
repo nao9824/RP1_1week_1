@@ -82,20 +82,24 @@ public class PlayerController : MonoBehaviour
         }
        if (Enemy.union)
        {
-            Destroy(EnemyObj.gameObject);
+            
             
             tentative = transform.position;
 
             transform.position = EnemyObj.transform.position;
             
             changchar = true;
-            
+
+            Destroy(EnemyObj.gameObject);
             //Instantiate(EnemyObj,new Vector3(tentative.x, tentative.y, tentative.z), Quaternion.identity);
 
             //‚±‚±‚Å‰æ‘œ“ü‚ê‘Ö‚¦
             spriteRenderer.sprite = newSprite;
 
-           
+            Enemy.union = false;
+
+
+
         }
       
     }
