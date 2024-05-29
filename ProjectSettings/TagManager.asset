@@ -9,6 +9,7 @@ TagManager:
   - playerBullet
   - Enemy
   - Toge
+  - Clear
   layers:
   - Default
   - TransparentFX

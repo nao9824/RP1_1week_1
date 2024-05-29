@@ -14,13 +14,25 @@ public class Clear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SceneManager.LoadScene("Clear", LoadSceneMode.Single);
-        }
+       
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       /* if (collision.gameObject.CompareTag("Clear"))
+        {
+            Debug.Log("Clear");
+            SceneManager.LoadScene("Clear", LoadSceneMode.Single);
+        }*/
+
+        /* if (Input.GetKeyDown(KeyCode.C))
+         {
+             SceneManager.LoadScene("Clear", LoadSceneMode.Single);
+         }*/
+    }
+
 }

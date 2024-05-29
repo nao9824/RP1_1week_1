@@ -128,6 +128,12 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
         }
+        else { isJump = false; }
+        if (collision.gameObject.CompareTag("Clear"))
+        {
+            Debug.Log("Clear");
+            SceneManager.LoadScene("Clear", LoadSceneMode.Single);
+        }
         //if (Enemy.union)
         //{
         //    tentative = transform.position;
