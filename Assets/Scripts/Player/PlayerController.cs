@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,7 +29,9 @@ public class PlayerController : MonoBehaviour
 
     bool shot = false;
     Vector3 bulletpoint;
-    public static int bulletcount = 5;
+
+    
+    public static int bulletcount = 3;
 
     public static bool changchar = false;
 
@@ -120,7 +123,7 @@ public class PlayerController : MonoBehaviour
         {
             string name = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(name, LoadSceneMode.Single);
-            bulletcount = 5;
+            bulletcount = 3;
         }
     }
 
@@ -144,7 +147,7 @@ public class PlayerController : MonoBehaviour
         {
             string name = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(name, LoadSceneMode.Single);
-            bulletcount = 5;
+            bulletcount = 3;
         }
         else { isJump = false; }
         if (collision.gameObject.CompareTag("Clear"))

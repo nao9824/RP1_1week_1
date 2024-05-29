@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         {
 
             BulletObj.transform.Translate(fMoveSpeed * Time.deltaTime, 0, 0);
-            if (PlayerObj.transform.position.x + 30.0f < BulletObj.transform.position.x)
+            if (PlayerController.velocity.x+ 30.0f < BulletObj.transform.position.x)
             {
                 Destroy(gameObject);
             }
