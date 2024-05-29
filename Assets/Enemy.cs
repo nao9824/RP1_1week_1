@@ -5,16 +5,23 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public static bool union = false;
+    private SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
+
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerController.changchar)
+        {
+            spriteRenderer.sprite = newSprite;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,6 +31,8 @@ public class Enemy : MonoBehaviour
             gameObject.GetComponent<Renderer>().material.color = Color.black;
             union = true;
             Destroy(other.gameObject);
+            
+
         }
 
         if (union)
@@ -33,6 +42,8 @@ public class Enemy : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material.color = Color.red;
             }
         }
+
+        
     }
 
     

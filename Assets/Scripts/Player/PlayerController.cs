@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,11 +28,18 @@ public class PlayerController : MonoBehaviour
     Vector3 bulletpoint;
     int bulletcount = 5;
 
+    public static bool changchar = false;
+
     public static Vector2 velocity;
 
-    //private string togeTag = "Toge";
+    Vector3 tentative;
+
+    private Image image;
+
+    public Sprite newSprite;
 
     public GameObject EnemyObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +52,8 @@ public class PlayerController : MonoBehaviour
         isJump = false;
 
         bulletpoint = transform.position;
+
+        image = GetComponent<Image>();
         //’e‚Ì”­ŽËˆÊ’u
         //bulletPoint = transform.Find("BulletPoint").localPosition;
     }
@@ -64,23 +74,50 @@ public class PlayerController : MonoBehaviour
                 Quaternion.identity
                 );
         }*/
-        if (Input.GetKeyDown(KeyCode.Space)&&0<bulletcount)
+        if (Input.GetKeyDown(KeyCode.Space)&&0<bulletcount&& !changchar)
         {
             Instantiate(BulletObj, transform.position, Quaternion.identity);
             bulletcount--;
         }
        if (Enemy.union)
        {
-            jumpPower = 20.0f;
-            Destroy(EnemyObj.gameObject);
-                
-       }
+           Destroy(EnemyObj.gameObject);
+            
+            tentative = transform.position;
 
+            transform.position = EnemyObj.transform.position;
+            
+            changchar = true;
+            
+            //Instantiate(EnemyObj,new Vector3(tentative.x, tentative.y, tentative.z), Quaternion.identity);
 
+            //‚±‚±‚Å‰æ‘œ“ü‚ê‘Ö‚¦
+            spriteRenderer.sprite = newSprite;
 
+           
+        }
+      
     }
 
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (EnemyObj.transform.position.y < transform.position.y-0.4f)
+            {
+                Destroy(EnemyObj);
+                bulletcount++;
+                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpPower);
+            }
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJump = false;
+        }
+    }
+
+
 
     private void MoveUpdate()
     {
@@ -115,13 +152,6 @@ public class PlayerController : MonoBehaviour
             isJump = true;
            
             rigidbody2D.velocity=new Vector2(rigidbody2D.velocity.x,jumpPower);
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Toge"))
-        {
-            isJump = false;
         }
     }
 
