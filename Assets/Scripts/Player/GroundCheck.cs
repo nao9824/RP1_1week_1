@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GroundCheck : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Toge"))
         {
-            Debug.Log("Ž€‚ñ‚¾");
+            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
         }
     }
 }

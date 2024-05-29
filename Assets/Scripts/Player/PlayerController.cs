@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -125,7 +126,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Toge")&&!changchar)
         {
-            Debug.Log("Ž€‚ñ‚¾");
+            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
         }
         //if (Enemy.union)
         //{
