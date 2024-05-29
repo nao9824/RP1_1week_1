@@ -140,7 +140,8 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Toge")&&!changchar)
         {
-            SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
+            string name = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(name, LoadSceneMode.Single);
         }
         else { isJump = false; }
         if (collision.gameObject.CompareTag("Clear"))
