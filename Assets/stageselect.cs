@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class stageselect : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class stageselect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        string name = SceneManager.GetActiveScene().name;
+        
+        
         if ((Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.RightArrow))&& count <= 3)
         {
             count++;
