@@ -8,6 +8,7 @@ TagManager:
   - BulletPoint
   - playerBullet
   - Enemy
+  - Toge
   layers:
   - Default
   - TransparentFX

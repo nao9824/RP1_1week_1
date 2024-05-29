@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public static Vector2 velocity;
 
+    //private string togeTag = "Toge";
 
     public GameObject EnemyObj;
     // Start is called before the first frame update
@@ -77,11 +79,8 @@ public class PlayerController : MonoBehaviour
 
 
     }
-    
-            
-       
-    
 
+    
 
     private void MoveUpdate()
     {
@@ -106,6 +105,8 @@ public class PlayerController : MonoBehaviour
             xSpeed = 0.0f;
         }
 
+        
+
     }
 
     private void JumpUpdate()
@@ -118,11 +119,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Toge"))
         {
             isJump = false;
         }
     }
+
+    
+
 
     /// <summary>
     /// FixedUpdateはUnityの標準機能で何度も自動で呼び出されるメソッド 

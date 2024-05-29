@@ -15,4 +15,11 @@ public class GroundCheck : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Toge"))
+        {
+            Debug.Log("Ž€‚ñ‚¾");
+        }
+    }
 }
